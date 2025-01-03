@@ -1,0 +1,197 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Светлая тема */
+.light-theme {
+    background-color: #FFFFFF;
+    color: #003580;
+}
+
+.light-theme header, .light-theme footer {
+    background-color: #003580;
+    color: #FFFFFF;
+}
+
+.light-theme .content-block {
+    background-color: #003580;
+    color: #FFFFFF;
+}
+
+/* Тёмная тема */
+.dark-theme {
+    background-color: #003580;
+    color: #FFFFFF;
+}
+
+.dark-theme header, .dark-theme footer {
+    background-color: #FFFFFF;
+    color: #003580;
+}
+
+.dark-theme .content-block {
+    background-color: #FFFFFF;
+    color: #003580;
+}
+
+/* Общие стили для обеих тем */
+header {
+    padding: 20px;
+}
+
+.name{
+    display: flex;
+    align-items: center;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-size: 2em;
+    margin: 0;
+    display: inline-block;
+}
+
+.header-content img {
+    height: 50px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+nav a, button {
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+.content-block {
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    text-align: center;
+}
+
+.content-block img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.text-content {
+    padding: 20px;
+}
+
+footer {
+    padding: 10px 20px; /* Добавляем отступы от левой и правой границы */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Размещает элементы по краям */
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0; /* Убираем стандартный отступ параграфа */
+}
+
+.footer-content button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    margin: 0; /* Убираем стандартный отступ для кнопки */
+}
+
+
+/* Адаптивность */
+@media screen and (min-width: 769px) {
+    main {
+        padding-bottom: 60px; /* Добавляем отступ снизу для основного контента */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-block {
+        width: 90%;
+    }
+    main {
+        padding-bottom: 60px; /* Достаточно, чтобы текст не заезжал за footer */
+    }
+}
+
+/* Горизонтальное положение телефона */
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+    .content-block {
+        width: 100%; /* Занимает всю ширину экрана */
+        margin: 10px 0; /* Уменьшение отступов по бокам */
+    }
+
+    main {
+        padding-bottom: 70px; /* Достаточно, чтобы текст не заезжал за footer */
+    }
+
+    .header-content {
+        flex-direction: row; /* Возвращаем горизонтальное расположение */
+        align-items: center; /* Выравнивание элементов по центру по вертикали */
+    }
+
+    .header-content h1, .header-content img {
+        margin-right: 10px; /* Отступ между заголовком и флагом */
+    }
+
+    nav {
+        margin-top: 0; /* Убираем отступ сверху, так как элементы теперь в ряд */
+    }
+
+    .footer-content {
+        flex-direction: row; /* Возвращаем горизонтальное расположение */
+        justify-content: space-between; /* Элементы равномерно распределяются по горизонтали */
+    }
+
+    .footer-content button {
+        margin-bottom: 0; /* Убираем отступ снизу для кнопки */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    main {
+        padding-bottom: 100px; /* Достаточно, чтобы текст не заезжал за footer */
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer-content button {
+        margin-bottom: 5px;
+    }
+}
